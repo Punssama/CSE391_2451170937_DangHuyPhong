@@ -229,6 +229,24 @@ câu C1
 </html>
 ```
 
+C2
+Nghe việc code web theo trường phái "div-only" nghe có vẻ nhàn nhưng thực chất quan điểm trên hoàn toàn sai lầm và có thể dẫn đến những vấn đề sau đây:
+
+1. SEO và Accessibility
+   Về SEO: Google không chỉ đọc chữ, mà nó đọc cấu trúc. Khi dùng `<div>`, bạn đang đưa cho Google một "tờ giấy trắng không tiêu đề", nó sẽ không nhận diện được đâu là tiêu đề, đâu là lề, đâu là các dòng kẻ. Ngược lại, các thẻ semantic như `<main>`,` <article>`, hay `<h1>` đóng vai trò là các biển chỉ dẫn. Khiến cho GG nhận diện được các thành phần trong trang web khiến việc đánh giá trang web của bạn có mức độ ưu tiên cao hơn.
+
+Về Accessibility (Khả năng tiếp cận): Đặt trong trường hợp một người khiếm thị sử dụng trình đọc màn hình . Nếu toàn bộ là `<div>`, trình đọc sẽ chỉ thông báo "vùng văn bản". Nhưng nếu dùng `<nav>`, người dùng có thể dùng phím tắt để nhảy thẳng tới menu. Dùng semantic HTML là thể hiện sự chuyên nghiệp và đạo đức của người làm nghề khi không bỏ rơi bất kỳ người dùng nào.
+
+1. Ví dụ chứng minh
+   Giả sử bạn làm một trang danh sách sản phẩm.
+
+Cách dùng `<div>: <div class="thisiswrong">...</div>`. Trình duyệt xem đây chỉ là một khối hộp.
+
+Cách dùng Semantic: Dùng `<article class="thisisright">`. Lúc này, mỗi sản phẩm được xác định là một thực thể độc lập. Nếu người dùng muốn lưu hoặc chia sẻ nội dung này, các thuật toán thông minh có thể dễ dàng trích xuất đúng vùng dữ liệu sản phẩm mà không bị lẫn với sidebar hay footer.
+
+1. Khi nào thì `<div>` is king ?
+   Semantic HTML rất quan trọng, nhưng không có nghĩa là chúng ta không dùng `<div>. <div>` vẫn cực kỳ tốt cho các mục đích trình bày (outlining). Ví dụ: Khi bạn cần một lớp bọc để căn giữa nội dung bằng Flexbox. Những thành phần này không mang ý nghĩa nội dung, nên dùng `<div>` là lựa chọn đúng đắn để tránh làm nhiễu cấu trúc dữ liệu của trang.
+
 B3 \
 Lỗi 1: Dòng 1 — Sai khai báo doctype (`<!DOCTYPE>`) — Sửa thành `<!doctype html>`.
 
